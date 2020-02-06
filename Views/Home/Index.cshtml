@@ -1,0 +1,33 @@
+﻿@model TujaViewModels
+@{
+    ViewData["Title"] = "Home Page";
+}
+@section Scripts{
+    <script src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}
+@using Microsoft.AspNetCore.Http
+<header class="container">
+    <h1 class="display-4">Tuja Esploristo</h1>
+    <div class="row">
+        <div class="col-6 col-offset-2">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="path">Path:</label>
+                    <input asp-for="path" class="form-control" />
+                    <span asp-validation-for="path" class="text-danger"></span>
+                </div>
+                <button id="espdic" asp-controller="Home" asp-action="espdic" class="btn btn-success">Espdic</button>
+                <button id="etimologio" asp-controller="Home" asp-action="etimologio" class="btn btn-success">Etimologio</button>
+                <button id="difinoj" asp-controller="Home" asp-action="difinoj" class="btn btn-success">Difinoj</button>
+                <button id="legu" asp-controller="Home" asp-action="legu" class="btn btn-success">Legu china</button>
+                <button id="leguTest" asp-controller="Home" asp-action="leguTest" class="btn btn-success">Legu Test</button>
+            </form>
+            <button id="vortaroj" class="btn btn-success">vortaroj rapide</button>
+            <button id="utf8xml" class="btn btn-success">xml en utf8</button>
+        </div>
+        <div class="col-md-4 _statuto">
+            <partial name="_statuto" />
+        </div>
+    </div>
+</header>
